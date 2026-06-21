@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Static Website-Adah Florence Onyebi</title>
+<style>
+ body{ 
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: whitesmoke;
+    color: black;
+    line-height: 1.7;
+  }
+ h1 {
+    text-align: center;
+    margin: 38px 0 28px;
+    letter-spacing: 1px;
+    color:black;
+    margin-bottom: 30px;
+  }
+    section {
+        background-color: white;
+        margin-bottom: 20px;
+        width: 75%;
+        max-width: 700px;
+        border: 1px lightgrey;
+    }
+    h2{
+        color: dimgray;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    a#send-btn:hover{background-color: dimgray;
+
+    }
+  </style>
+    </head>
+    <body>
+        
+        
+        <h1>Hello, and welcome</h1>
+        <section>
+        <p>
+            Hi. My name is <strong>Adah Florence Onyebi.</strong> A student of <strong>Computer Science</strong>, I am identified with the matriculation number <strong>UJ/2024/NS/0400</strong>, currently in <strong>200 level</strong>.
+        </p>
+        </section>
+                <section>
+        <h2>About This Page</h2>
+        <p> 
+            This page was created as part of my assignment for INS205, it represents my early work in web development. The aim of this project is to improve my skills to as a web developer.
+        </p>
+                </section>
+        <section>
+        <h2>Contact ME</h2>
+        <p>If you'd like to contact me, you can do so by sending an email using the button below:</p>
+        <a href="mailto:2024ns0400@unijos.edu.ng" id="send-btn">
+            Send email
+        </a>
+        </section>
+
+
+
+
+
+
+
+ <script>
+
+        /* -------------------------------------------------------
+
+           Matric-number → button colour
+
+           Replace the matric value below with your own number.
+
+           ------------------------------------------------------- */
+
+        const matric = "UJ/2024/NS/0400"; // <-- CHANGE THIS TO YOUR MAT. NO.
+
+
+
+	/* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */ 
+
+
+
+        function hashString(str) {
+
+            let hash = 0;
+
+            for (let i = 0; i < str.length; i++) {
+
+                hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+
+            }
+
+            return hash;
+
+        }
+
+
+
+        // Normalise input
+
+        const normalised = matric.trim().toUpperCase();
+
+
+
+        // Map the hash to a hue value between 0 and 359 degrees
+
+        const hue = hashString(normalised) % 360;
+
+
+
+        // Build an HSL colour: fixed saturation & lightness, varying hue
+
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+
+
+
+        // Apply the colour to the Send Email button
+
+        document.getElementById("send-btn").style.background = buttonColour;
+
+    </script>
+
+
+
+
+</body>
+</html>
